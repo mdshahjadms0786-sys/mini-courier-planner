@@ -1,0 +1,58 @@
+$ python main.py --benchmark
+Running benchmarks (this takes about a minute)...
+[1/5] Sorting
+  sorting n=    10: merge     0.02 ms
+  sorting n=   100: merge     0.16 ms
+  sorting n=   500: merge     0.94 ms
+  sorting n=  1000: merge     2.03 ms
+  sorting n=  2000: merge     4.25 ms
+  sorting n=  5000: merge    12.36 ms
+  sorting n= 10000: merge    27.18 ms
+[2/5] Knapsack
+  knapsack n=   10 W=500:      0.42 ms
+  knapsack n=   50 W=500:      2.17 ms
+  knapsack n=  100 W=500:      4.29 ms
+  knapsack n=  250 W=500:     10.76 ms
+  knapsack n=  500 W=500:     22.17 ms
+  knapsack n= 1000 W=500:     44.31 ms
+  knapsack n=200 W=   50:      0.80 ms
+  knapsack n=200 W=  100:      1.61 ms
+  knapsack n=200 W=  250:      3.86 ms
+  knapsack n=200 W=  500:      8.88 ms
+  knapsack n=200 W= 1000:     19.16 ms
+  knapsack n=200 W= 2000:     41.33 ms
+[3/5] Dijkstra
+  dijkstra V=   10 E=   19:    0.023 ms
+  dijkstra V=   50 E=  109:    0.083 ms
+  dijkstra V=  100 E=  215:    0.150 ms
+  dijkstra V=  250 E=  535:    0.353 ms
+  dijkstra V=  500 E= 1045:    0.689 ms
+  dijkstra V= 1000 E= 2099:    1.369 ms
+  dijkstra V= 2000 E= 4177:    2.836 ms
+[4/5] TSP
+  tsp NN k=   5:    0.017 ms
+  tsp NN k=  10:    0.025 ms
+  tsp NN k=  25:    0.063 ms
+  tsp NN k=  50:    0.196 ms
+  tsp NN k= 100:    0.639 ms
+  tsp NN k= 200:    2.447 ms
+  tsp NN k= 400:    9.922 ms
+  tsp NN vs exact k=3: avg NN/opt = 1.013
+  tsp NN vs exact k=4: avg NN/opt = 1.054
+  tsp NN vs exact k=5: avg NN/opt = 1.049
+  tsp NN vs exact k=6: avg NN/opt = 1.056
+  tsp NN vs exact k=7: avg NN/opt = 1.084
+  tsp NN vs exact k=8: avg NN/opt = 1.027
+  tsp NN vs exact k=9: avg NN/opt = 1.043
+[5/5] End-to-end
+  end-to-end small : total      0.12 ms, 5 parcels, 3 stops, 305.6 km
+  end-to-end medium: total      3.18 ms, 27 parcels, 23 stops, 610.5 km
+  end-to-end large : total    109.69 ms, 194 parcels, 139 stops, 1605.9 km
+
+Raw results : performance\results\benchmark_results.json
+Tables      : performance\results\runtime_tables.md
+Chart       : performance\charts\sorting_comparison.png
+Chart       : performance\charts\knapsack_scaling.png
+Chart       : performance\charts\dijkstra_scaling.png
+Chart       : performance\charts\tsp_comparison.png
+Chart       : performance\charts\end_to_end_breakdown.png

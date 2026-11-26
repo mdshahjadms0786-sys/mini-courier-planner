@@ -1,0 +1,42 @@
+$ python -m unittest discover -s tests -v
+test_directed_graph_one_way_unreachable (test_algorithms.TestCourierPlanner.test_directed_graph_one_way_unreachable) ... ok
+test_generated_datasets_run (test_algorithms.TestCourierPlanner.test_generated_datasets_run) ... ok
+test_negative_capacity_rejected (test_algorithms.TestCourierPlanner.test_negative_capacity_rejected) ... ok
+test_no_parcels (test_algorithms.TestCourierPlanner.test_no_parcels) ... ok
+test_sample_plan (test_algorithms.TestCourierPlanner.test_sample_plan) ... ok
+test_unknown_destination (test_algorithms.TestCourierPlanner.test_unknown_destination) ... ok
+test_zero_capacity (test_algorithms.TestCourierPlanner.test_zero_capacity) ... ok
+test_bad_files (test_algorithms.TestDataValidation.test_bad_files) ... ok
+test_invalid_graphs (test_algorithms.TestDataValidation.test_invalid_graphs) ... ok
+test_invalid_parcels (test_algorithms.TestDataValidation.test_invalid_parcels) ... ok
+test_valid_parcel (test_algorithms.TestDataValidation.test_valid_parcel) ... ok
+test_invalid_inputs (test_algorithms.TestDijkstra.test_invalid_inputs) ... ok
+test_known_distances (test_algorithms.TestDijkstra.test_known_distances) ... ok
+test_matches_bellman_ford_on_random_graphs (test_algorithms.TestDijkstra.test_matches_bellman_ford_on_random_graphs) ... ok
+test_path_length_equals_distance (test_algorithms.TestDijkstra.test_path_length_equals_distance) ... ok
+test_source_to_itself (test_algorithms.TestDijkstra.test_source_to_itself) ... ok
+test_unreachable_node (test_algorithms.TestDijkstra.test_unreachable_node) ... ok
+test_all_items_fit (test_algorithms.TestKnapsack.test_all_items_fit) ... ok
+test_dp_table_shape_and_answer (test_algorithms.TestKnapsack.test_dp_table_shape_and_answer) ... ok
+test_every_item_too_heavy (test_algorithms.TestKnapsack.test_every_item_too_heavy) ... ok
+test_invalid_inputs (test_algorithms.TestKnapsack.test_invalid_inputs) ... ok
+test_matches_brute_force_and_respects_capacity (test_algorithms.TestKnapsack.test_matches_brute_force_and_respects_capacity) ... ok
+test_no_items (test_algorithms.TestKnapsack.test_no_items) ... ok
+test_textbook_example (test_algorithms.TestKnapsack.test_textbook_example) ... ok
+test_zero_capacity (test_algorithms.TestKnapsack.test_zero_capacity) ... ok
+test_empty_and_single (test_algorithms.TestSorting.test_empty_and_single) ... ok
+test_input_not_modified (test_algorithms.TestSorting.test_input_not_modified) ... ok
+test_matches_builtin_on_random_data (test_algorithms.TestSorting.test_matches_builtin_on_random_data) ... ok
+test_parcel_priority_order (test_algorithms.TestSorting.test_parcel_priority_order) ... ok
+test_sorted_reversed_and_duplicates (test_algorithms.TestSorting.test_sorted_reversed_and_duplicates) ... ok
+test_stability_with_key (test_algorithms.TestSorting.test_stability_with_key) ... ok
+test_edge_cases (test_algorithms.TestTSP.test_edge_cases) ... ok
+test_known_greedy_order (test_algorithms.TestTSP.test_known_greedy_order) ... ok
+test_nn_never_beats_optimal_and_can_be_worse (test_algorithms.TestTSP.test_nn_never_beats_optimal_and_can_be_worse) ... ok
+test_route_visits_every_stop_once_and_returns (test_algorithms.TestTSP.test_route_visits_every_stop_once_and_returns) ... ok
+test_unreachable_stop_raises (test_algorithms.TestTSP.test_unreachable_stop_raises) ... ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 0.923s
+
+OK

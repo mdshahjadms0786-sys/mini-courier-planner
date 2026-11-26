@@ -1,0 +1,18 @@
+{
+  "description": "Sample parcels for one delivery trip. weight in kg (integer), priority 1=Critical..5=Low, deadline in hours from dispatch.",
+  "vehicle_capacity_kg": 20,
+  "parcels": [
+    {"id": "P01", "weight": 4, "priority": 1, "deadline": 4,  "destination": "Hospital"},
+    {"id": "P02", "weight": 6, "priority": 2, "deadline": 6,  "destination": "Airport"},
+    {"id": "P03", "weight": 3, "priority": 3, "deadline": 8,  "destination": "Library"},
+    {"id": "P04", "weight": 5, "priority": 1, "deadline": 3,  "destination": "Mall"},
+    {"id": "P05", "weight": 8, "priority": 4, "deadline": 24, "destination": "TechPark"},
+    {"id": "P06", "weight": 2, "priority": 2, "deadline": 5,  "destination": "School"},
+    {"id": "P07", "weight": 7, "priority": 5, "deadline": 48, "destination": "Stadium"},
+    {"id": "P08", "weight": 3, "priority": 3, "deadline": 12, "destination": "Riverside"},
+    {"id": "P09", "weight": 5, "priority": 2, "deadline": 10, "destination": "Market"},
+    {"id": "P10", "weight": 9, "priority": 1, "deadline": 6,  "destination": "Station"},
+    {"id": "P11", "weight": 2, "priority": 4, "deadline": 30, "destination": "Library"},
+    {"id": "P12", "weight": 4, "priority": 1, "deadline": 2,  "destination": "Hilltop"}
+  ]
+}

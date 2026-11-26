@@ -1,0 +1,42 @@
+{
+  "description": "Sample city road network. Edge weights are road distances in km. Hilltop has no roads (used to demonstrate unreachable destinations).",
+  "depot": "Depot",
+  "directed": false,
+  "nodes": {
+    "Depot":     {"x": 0,  "y": 0},
+    "Market":    {"x": 3,  "y": 1},
+    "Station":   {"x": 2,  "y": 4},
+    "School":    {"x": 6,  "y": 3},
+    "Hospital":  {"x": 5,  "y": 7},
+    "Library":   {"x": 1,  "y": 7},
+    "Mall":      {"x": 8,  "y": 6},
+    "TechPark":  {"x": 9,  "y": 1},
+    "Stadium":   {"x": 8,  "y": 9},
+    "Airport":   {"x": 12, "y": 4},
+    "Riverside": {"x": 11, "y": 8},
+    "Hilltop":   {"x": -3, "y": 9}
+  },
+  "edges": [
+    ["Depot", "Market", 3.5],
+    ["Depot", "Station", 4.5],
+    ["Market", "Station", 3.2],
+    ["Market", "School", 3.8],
+    ["Market", "TechPark", 6.5],
+    ["Station", "School", 4.2],
+    ["Station", "Library", 3.5],
+    ["Station", "Hospital", 4.6],
+    ["School", "Hospital", 4.2],
+    ["School", "Mall", 3.8],
+    ["School", "TechPark", 3.7],
+    ["Library", "Hospital", 4.1],
+    ["Hospital", "Mall", 3.3],
+    ["Hospital", "Stadium", 3.8],
+    ["Mall", "Stadium", 3.2],
+    ["Mall", "Airport", 4.6],
+    ["Mall", "TechPark", 5.2],
+    ["Mall", "Riverside", 3.7],
+    ["TechPark", "Airport", 4.2],
+    ["Stadium", "Riverside", 3.3],
+    ["Airport", "Riverside", 4.2]
+  ]
+}

@@ -1,0 +1,84 @@
+$ python main.py
+
+========== MINI COURIER PLANNER ==========
+ Data: 12 parcels | 12 locations | capacity 20 kg
+------------------------------------------
+ 1. Display All Parcels
+ 2. Sort and Prioritize Parcels
+ 3. Optimize Package Selection (0/1 Knapsack DP)
+ 4. Display Delivery Graph
+ 5. Calculate Shortest Paths (Dijkstra)
+ 6. Generate Delivery Route (Nearest Neighbour TSP)
+ 7. Display Complete Courier Plan
+ 8. Run Performance Benchmark
+ 9. Generate Runtime Charts
+10. Exit
+ 0. Load another dataset / change capacity
+==========================================
+Enter your choice (0-10): 
+Dijkstra shortest paths from the depot 'Depot' (exact, one source -> one target):
+  Depot -> Mall            11.1 km   via Depot -> Market -> School -> Mall
+  Depot -> Hospital         9.1 km   via Depot -> Station -> Hospital
+  Depot -> School           7.3 km   via Depot -> Market -> School
+  Depot -> Library          8.0 km   via Depot -> Station -> Library
+  Depot -> Riverside       14.8 km   via Depot -> Market -> School -> Mall -> Riverside
+
+Stop-to-stop shortest distance matrix (km) used by the TSP step:
+               Depot      Mall  Hospital    School   Library Riverside
+Depot            0.0      11.1       9.1       7.3       8.0      14.8
+Mall            11.1       0.0       3.3       3.8       7.4       3.7
+Hospital         9.1       3.3       0.0       4.2       4.1       7.0
+School           7.3       3.8       4.2       0.0       7.7       7.5
+Library          8.0       7.4       4.1       7.7       0.0      11.1
+Riverside       14.8       3.7       7.0       7.5      11.1       0.0
+
+Press Enter to return to the menu...
+========== MINI COURIER PLANNER ==========
+ Data: 12 parcels | 12 locations | capacity 20 kg
+------------------------------------------
+ 1. Display All Parcels
+ 2. Sort and Prioritize Parcels
+ 3. Optimize Package Selection (0/1 Knapsack DP)
+ 4. Display Delivery Graph
+ 5. Calculate Shortest Paths (Dijkstra)
+ 6. Generate Delivery Route (Nearest Neighbour TSP)
+ 7. Display Complete Courier Plan
+ 8. Run Performance Benchmark
+ 9. Generate Runtime Charts
+10. Exit
+ 0. Load another dataset / change capacity
+==========================================
+Enter your choice (0-10): 
+Nearest Neighbour TSP route (APPROXIMATE - a good tour, not guaranteed optimal):
+  Visit order: Depot -> School -> Mall -> Hospital -> Library -> Riverside -> Depot
+  Leg  1: Depot        -> School          7.3 km   road: Depot -> Market -> School
+  Leg  2: School       -> Mall            3.8 km   road: School -> Mall
+  Leg  3: Mall         -> Hospital        3.3 km   road: Mall -> Hospital
+  Leg  4: Hospital     -> Library         4.1 km   road: Hospital -> Library
+  Leg  5: Library      -> Riverside      11.1 km   road: Library -> Hospital -> Mall -> Riverside
+  Leg  6: Riverside    -> Depot          14.8 km   road: Riverside -> Mall -> School -> Market -> Depot
+  TOTAL ROUTE DISTANCE: 44.4 km
+
+Check against the EXACT optimum (brute force over all 5! orders - feasible only for small inputs):
+  Optimal order: Depot -> School -> Mall -> Riverside -> Hospital -> Library -> Depot
+  Optimal distance: 33.9 km   Nearest Neighbour is 10.5 km (31.0%) longer
+
+Route map saved to screenshots\route_map.png
+
+Press Enter to return to the menu...
+========== MINI COURIER PLANNER ==========
+ Data: 12 parcels | 12 locations | capacity 20 kg
+------------------------------------------
+ 1. Display All Parcels
+ 2. Sort and Prioritize Parcels
+ 3. Optimize Package Selection (0/1 Knapsack DP)
+ 4. Display Delivery Graph
+ 5. Calculate Shortest Paths (Dijkstra)
+ 6. Generate Delivery Route (Nearest Neighbour TSP)
+ 7. Display Complete Courier Plan
+ 8. Run Performance Benchmark
+ 9. Generate Runtime Charts
+10. Exit
+ 0. Load another dataset / change capacity
+==========================================
+Enter your choice (0-10): Goodbye!

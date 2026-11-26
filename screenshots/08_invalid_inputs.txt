@@ -1,0 +1,61 @@
+$ python main.py --parcels data/missing.json
+Error: parcel file not found: data/missing.json
+
+$ python main.py   (typed: 0, Enter, Enter, -5, Enter, 11, 10)
+
+========== MINI COURIER PLANNER ==========
+ Data: 12 parcels | 12 locations | capacity 20 kg
+------------------------------------------
+ 1. Display All Parcels
+ 2. Sort and Prioritize Parcels
+ 3. Optimize Package Selection (0/1 Knapsack DP)
+ 4. Display Delivery Graph
+ 5. Calculate Shortest Paths (Dijkstra)
+ 6. Generate Delivery Route (Nearest Neighbour TSP)
+ 7. Display Complete Courier Plan
+ 8. Run Performance Benchmark
+ 9. Generate Runtime Charts
+10. Exit
+ 0. Load another dataset / change capacity
+==========================================
+Enter your choice (0-10): 
+Press Enter to keep the current value.
+Parcel file [data\parcels.json]: Graph file  [data\delivery_graph.json]: Capacity kg [from file]: Capacity must be a non-negative whole number - dataset not changed.
+
+Press Enter to return to the menu...
+========== MINI COURIER PLANNER ==========
+ Data: 12 parcels | 12 locations | capacity 20 kg
+------------------------------------------
+ 1. Display All Parcels
+ 2. Sort and Prioritize Parcels
+ 3. Optimize Package Selection (0/1 Knapsack DP)
+ 4. Display Delivery Graph
+ 5. Calculate Shortest Paths (Dijkstra)
+ 6. Generate Delivery Route (Nearest Neighbour TSP)
+ 7. Display Complete Courier Plan
+ 8. Run Performance Benchmark
+ 9. Generate Runtime Charts
+10. Exit
+ 0. Load another dataset / change capacity
+==========================================
+Enter your choice (0-10): Invalid choice '11'. Please enter a number from 0 to 10.
+
+========== MINI COURIER PLANNER ==========
+ Data: 12 parcels | 12 locations | capacity 20 kg
+------------------------------------------
+ 1. Display All Parcels
+ 2. Sort and Prioritize Parcels
+ 3. Optimize Package Selection (0/1 Knapsack DP)
+ 4. Display Delivery Graph
+ 5. Calculate Shortest Paths (Dijkstra)
+ 6. Generate Delivery Route (Nearest Neighbour TSP)
+ 7. Display Complete Courier Plan
+ 8. Run Performance Benchmark
+ 9. Generate Runtime Charts
+10. Exit
+ 0. Load another dataset / change capacity
+==========================================
+Enter your choice (0-10): Goodbye!
+
+$ python main.py --parcels screenshots\_bad_parcels.json   (file has weight -2)
+Error: parcel X: weight must be a positive integer (kg)

@@ -1,0 +1,161 @@
+$ python main.py --capacity 35 --demo
+
+----- STEP 1-2  PARCELS -----
+  #  ID     Weight  Priority     Deadline  Value  Destination
+-------------------------------------------------------------
+  1  P01       4kg  1 Critical        4 h     70  Hospital
+  2  P02       6kg  2 High            6 h     58  Airport
+  3  P03       3kg  3 Medium          8 h     46  Library
+  4  P04       5kg  1 Critical        3 h     71  Mall
+  5  P05       8kg  4 Normal         24 h     20  TechPark
+  6  P06       2kg  2 High            5 h     59  School
+  7  P07       7kg  5 Low            48 h     10  Stadium
+  8  P08       3kg  3 Medium         12 h     42  Riverside
+  9  P09       5kg  2 High           10 h     54  Market
+ 10  P10       9kg  1 Critical        6 h     68  Station
+ 11  P11       2kg  4 Normal         30 h     20  Library
+ 12  P12       4kg  1 Critical        2 h     72  Hilltop
+-------------------------------------------------------------
+     Total: 12 parcels, 58 kg, value 590
+
+----- STEP 3  PRIORITISED ORDER (Merge Sort) -----
+  #  ID     Weight  Priority     Deadline  Value  Destination
+-------------------------------------------------------------
+  1  P12       4kg  1 Critical        2 h     72  Hilltop
+  2  P04       5kg  1 Critical        3 h     71  Mall
+  3  P01       4kg  1 Critical        4 h     70  Hospital
+  4  P06       2kg  2 High            5 h     59  School
+  5  P10       9kg  1 Critical        6 h     68  Station
+  6  P02       6kg  2 High            6 h     58  Airport
+  7  P03       3kg  3 Medium          8 h     46  Library
+  8  P09       5kg  2 High           10 h     54  Market
+  9  P08       3kg  3 Medium         12 h     42  Riverside
+ 10  P05       8kg  4 Normal         24 h     20  TechPark
+ 11  P11       2kg  4 Normal         30 h     20  Library
+ 12  P07       7kg  5 Low            48 h     10  Stadium
+-------------------------------------------------------------
+     Total: 12 parcels, 58 kg, value 590
+
+----- STEP 4  PACKING PLAN (0/1 Knapsack DP) -----
+Vehicle capacity: 35 kg
+Parcels considered (deliverable): 11
+
+DP table  dp[i][c] = best value using the first i parcels with capacity c:
+Item          c=0   c=1   c=2   c=3   c=4   c=5   c=6   c=7   c=8   c=9  c=10  c=11  c=12  c=13  c=14  c=15  c=16  c=17  c=18  c=19  c=20  c=21  c=22  c=23  c=24  c=25  c=26  c=27  c=28  c=29  c=30  c=31  c=32  c=33  c=34  c=35
+(none)          0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+P04 w5 v71      0     0     0     0     0    71    71    71    71    71    71    71    71    71    71    71    71    71    71    71    71    71    71    71    71    71    71    71    71    71    71    71    71    71    71    71
+P01 w4 v70      0     0     0     0    70    71    71    71    71   141   141   141   141   141   141   141   141   141   141   141   141   141   141   141   141   141   141   141   141   141   141   141   141   141   141   141
+P06 w2 v59      0     0    59    59    70    71   129   130   130   141   141   200   200   200   200   200   200   200   200   200   200   200   200   200   200   200   200   200   200   200   200   200   200   200   200   200
+P10 w9 v68      0     0    59    59    70    71   129   130   130   141   141   200   200   200   200   200   200   200   209   209   268   268   268   268   268   268   268   268   268   268   268   268   268   268   268   268
+P02 w6 v58      0     0    59    59    70    71   129   130   130   141   141   200   200   200   200   200   200   258   258   258   268   268   268   268   268   268   326   326   326   326   326   326   326   326   326   326
+P03 w3 v46      0     0    59    59    70   105   129   130   130   175   176   200   200   200   246   246   246   258   258   258   304   304   304   314   314   314   326   326   326   372   372   372   372   372   372   372
+P09 w5 v54      0     0    59    59    70   105   129   130   130   175   176   200   200   200   246   246   254   258   258   300   304   304   312   314   314   358   358   358   368   372   372   380   380   380   426   426
+P08 w3 v42      0     0    59    59    70   105   129   130   147   175   176   200   217   218   246   246   254   288   288   300   304   304   342   346   346   358   358   358   400   400   400   410   414   414   426   426
+P05 w8 v20      0     0    59    59    70   105   129   130   147   175   176   200   217   218   246   246   254   288   288   300   304   304   342   346   346   358   358   358   400   400   400   410   414   414   426   426
+P11 w2 v20      0     0    59    59    79   105   129   130   149   175   176   200   217   220   246   246   266   288   288   308   308   320   342   346   362   366   366   378   400   400   420   420   420   430   434   434
+P07 w7 v10      0     0    59    59    79   105   129   130   149   175   176   200   217   220   246   246   266   288   288   308   308   320   342   346   362   366   366   378   400   400   420   420   420   430   434   434
+
+SELECTED parcels (packing plan):
+  #  ID     Weight  Priority     Deadline  Value  Destination
+-------------------------------------------------------------
+  1  P04       5kg  1 Critical        3 h     71  Mall
+  2  P01       4kg  1 Critical        4 h     70  Hospital
+  3  P06       2kg  2 High            5 h     59  School
+  4  P10       9kg  1 Critical        6 h     68  Station
+  5  P02       6kg  2 High            6 h     58  Airport
+  6  P03       3kg  3 Medium          8 h     46  Library
+  7  P08       3kg  3 Medium         12 h     42  Riverside
+  8  P11       2kg  4 Normal         30 h     20  Library
+-------------------------------------------------------------
+     Total: 8 parcels, 34 kg, value 434
+
+Maximum total value: 434
+Total selected weight: 34 kg of 35 kg (97.1% full)
+
+Left for the next trip:
+  #  ID     Weight  Priority     Deadline  Value  Destination
+-------------------------------------------------------------
+  1  P09       5kg  2 High           10 h     54  Market
+  2  P05       8kg  4 Normal         24 h     20  TechPark
+  3  P07       7kg  5 Low            48 h     10  Stadium
+-------------------------------------------------------------
+     Total: 3 parcels, 20 kg, value 84
+
+UNDELIVERABLE (destination unknown or unreachable):
+  #  ID     Weight  Priority     Deadline  Value  Destination
+-------------------------------------------------------------
+  1  P12       4kg  1 Critical        2 h     72  Hilltop
+-------------------------------------------------------------
+     Total: 1 parcels, 4 kg, value 72
+
+----- STEP 5-7  SHORTEST PATHS (Dijkstra) -----
+Dijkstra shortest paths from the depot 'Depot' (exact, one source -> one target):
+  Depot -> Mall            11.1 km   via Depot -> Market -> School -> Mall
+  Depot -> Hospital         9.1 km   via Depot -> Station -> Hospital
+  Depot -> School           7.3 km   via Depot -> Market -> School
+  Depot -> Station          4.5 km   via Depot -> Station
+  Depot -> Airport         14.2 km   via Depot -> Market -> TechPark -> Airport
+  Depot -> Library          8.0 km   via Depot -> Station -> Library
+  Depot -> Riverside       14.8 km   via Depot -> Market -> School -> Mall -> Riverside
+
+Stop-to-stop shortest distance matrix (km) used by the TSP step:
+               Depot      Mall  Hospital    School   Station   Airport   Library Riverside
+Depot            0.0      11.1       9.1       7.3       4.5      14.2       8.0      14.8
+Mall            11.1       0.0       3.3       3.8       7.9       4.6       7.4       3.7
+Hospital         9.1       3.3       0.0       4.2       4.6       7.9       4.1       7.0
+School           7.3       3.8       4.2       0.0       4.2       7.9       7.7       7.5
+Station          4.5       7.9       4.6       4.2       0.0      12.1       3.5      11.6
+Airport         14.2       4.6       7.9       7.9      12.1       0.0      12.0       4.2
+Library          8.0       7.4       4.1       7.7       3.5      12.0       0.0      11.1
+Riverside       14.8       3.7       7.0       7.5      11.6       4.2      11.1       0.0
+
+----- STEP 8-9  DELIVERY ROUTE (Nearest Neighbour TSP) -----
+Nearest Neighbour TSP route (APPROXIMATE - a good tour, not guaranteed optimal):
+  Visit order: Depot -> Station -> Library -> Hospital -> Mall -> Riverside -> Airport -> School -> Depot
+  Leg  1: Depot        -> Station         4.5 km   road: Depot -> Station
+  Leg  2: Station      -> Library         3.5 km   road: Station -> Library
+  Leg  3: Library      -> Hospital        4.1 km   road: Library -> Hospital
+  Leg  4: Hospital     -> Mall            3.3 km   road: Hospital -> Mall
+  Leg  5: Mall         -> Riverside       3.7 km   road: Mall -> Riverside
+  Leg  6: Riverside    -> Airport         4.2 km   road: Riverside -> Airport
+  Leg  7: Airport      -> School          7.9 km   road: Airport -> TechPark -> School
+  Leg  8: School       -> Depot           7.3 km   road: School -> Market -> Depot
+  TOTAL ROUTE DISTANCE: 38.5 km
+
+Check against the EXACT optimum (brute force over all 7! orders - feasible only for small inputs):
+  Optimal order: Depot -> School -> Airport -> Riverside -> Mall -> Hospital -> Library -> Station -> Depot
+  Optimal distance: 38.5 km   Nearest Neighbour is 0.0 km (0.0%) longer  -> NN found an optimal tour here
+
+======================================================================
+COMPLETE COURIER PLAN SUMMARY
+======================================================================
+Parcels loaded from file   : 12
+Sorting algorithm          : Merge Sort
+Undeliverable parcels      : 1
+Vehicle capacity           : 35 kg
+Parcels selected (DP)      : 8  (34 kg, value 434)
+Parcels left for next trip : 3
+Delivery stops             : 7
+Route                      : Depot -> Station -> Library -> Hospital -> Mall -> Riverside -> Airport -> School -> Depot
+Total route distance       : 38.5 km
+
+Delivery schedule (ETA at 30 km/h average):
+  P04    -> Mall         ETA  0.51 h  deadline   3 h  on time
+  P01    -> Hospital     ETA  0.40 h  deadline   4 h  on time
+  P06    -> School       ETA  1.04 h  deadline   5 h  on time
+  P10    -> Station      ETA  0.15 h  deadline   6 h  on time
+  P02    -> Airport      ETA  0.78 h  deadline   6 h  on time
+  P03    -> Library      ETA  0.27 h  deadline   8 h  on time
+  P08    -> Riverside    ETA  0.64 h  deadline  12 h  on time
+  P11    -> Library      ETA  0.27 h  deadline  30 h  on time
+
+Step timings (time.perf_counter):
+  Sorting                         0.043 ms
+  Reachability check              0.065 ms
+  Knapsack DP                     0.096 ms
+  Dijkstra                        0.218 ms
+  TSP (Nearest Neighbour)         0.059 ms
+  Total                           0.502 ms
+======================================================================
+
+Route map saved to screenshots\route_map.png

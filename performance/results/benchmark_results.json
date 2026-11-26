@@ -1,0 +1,343 @@
+{
+ "meta": {
+  "date": "2026-11-26 15:31",
+  "python": "3.14.2",
+  "machine": "Windows 11 / Intel64 Family 6 Model 154 Stepping 4, GenuineIntel"
+ },
+ "sorting": [
+  {
+   "n": 10,
+   "Merge Sort": 1.7899961676448584e-05,
+   "Quick Sort": 1.969997538253665e-05,
+   "Quick Sort (middle pivot)": 2.3300002794712782e-05,
+   "Built-in sorted()": 3.700028173625469e-06,
+   "Insertion Sort": 1.1200027074664831e-05,
+   "Insertion Sort (pre-sorted input)": 7.90000194683671e-06
+  },
+  {
+   "n": 100,
+   "Merge Sort": 0.00016310001956298947,
+   "Quick Sort": 0.00020070001482963562,
+   "Quick Sort (middle pivot)": 0.00019539997447282076,
+   "Built-in sorted()": 2.4500011932104826e-05,
+   "Insertion Sort": 0.0002914000069722533,
+   "Insertion Sort (pre-sorted input)": 3.3100019209086895e-05
+  },
+  {
+   "n": 500,
+   "Merge Sort": 0.0009357999661006033,
+   "Quick Sort": 0.0012121000327169895,
+   "Quick Sort (middle pivot)": 0.0014471000176854432,
+   "Built-in sorted()": 0.00014519999967887998,
+   "Insertion Sort": 0.006250200036447495,
+   "Insertion Sort (pre-sorted input)": 0.00013830000534653664
+  },
+  {
+   "n": 1000,
+   "Merge Sort": 0.002030900039244443,
+   "Quick Sort": 0.00254100002348423,
+   "Quick Sort (middle pivot)": 0.0037715999642387033,
+   "Built-in sorted()": 0.00030200002947822213,
+   "Insertion Sort": 0.026582300022710115,
+   "Insertion Sort (pre-sorted input)": 0.0002660999889485538
+  },
+  {
+   "n": 2000,
+   "Merge Sort": 0.004247200035024434,
+   "Quick Sort": 0.006206900055985898,
+   "Quick Sort (middle pivot)": 0.011317300028167665,
+   "Built-in sorted()": 0.000672800000756979,
+   "Insertion Sort": 0.11244659998919815,
+   "Insertion Sort (pre-sorted input)": 0.0005400999798439443
+  },
+  {
+   "n": 5000,
+   "Merge Sort": 0.012355800019577146,
+   "Quick Sort": 0.016641800000797957,
+   "Quick Sort (middle pivot)": 0.05877529998542741,
+   "Built-in sorted()": 0.0017447000136598945,
+   "Insertion Sort": null,
+   "Insertion Sort (pre-sorted input)": 0.0015165000222623348
+  },
+  {
+   "n": 10000,
+   "Merge Sort": 0.027177999960258603,
+   "Quick Sort": 0.03671980003127828,
+   "Quick Sort (middle pivot)": 0.21943220001412556,
+   "Built-in sorted()": 0.0036683999933302402,
+   "Insertion Sort": null,
+   "Insertion Sort (pre-sorted input)": 0.0034551999997347593
+  }
+ ],
+ "knapsack": {
+  "vary_n": [
+   {
+    "n": 10,
+    "W": 500,
+    "Full DP table": 0.0004238999681547284,
+    "1-D DP (value only)": 0.000304899993352592
+   },
+   {
+    "n": 50,
+    "W": 500,
+    "Full DP table": 0.002166900027077645,
+    "1-D DP (value only)": 0.0015310999588109553
+   },
+   {
+    "n": 100,
+    "W": 500,
+    "Full DP table": 0.004285999981220812,
+    "1-D DP (value only)": 0.0029557999805547297
+   },
+   {
+    "n": 250,
+    "W": 500,
+    "Full DP table": 0.010762099991552532,
+    "1-D DP (value only)": 0.0073290999862365425
+   },
+   {
+    "n": 500,
+    "W": 500,
+    "Full DP table": 0.022171800024807453,
+    "1-D DP (value only)": 0.014650899975094944
+   },
+   {
+    "n": 1000,
+    "W": 500,
+    "Full DP table": 0.044306800002232194,
+    "1-D DP (value only)": 0.02911659999517724
+   }
+  ],
+  "vary_W": [
+   {
+    "n": 200,
+    "W": 50,
+    "Full DP table": 0.0008003000402823091,
+    "1-D DP (value only)": 0.0004938000347465277
+   },
+   {
+    "n": 200,
+    "W": 100,
+    "Full DP table": 0.0016117999912239611,
+    "1-D DP (value only)": 0.0009813000215217471
+   },
+   {
+    "n": 200,
+    "W": 250,
+    "Full DP table": 0.0038552999612875283,
+    "1-D DP (value only)": 0.002538600005209446
+   },
+   {
+    "n": 200,
+    "W": 500,
+    "Full DP table": 0.008878099964931607,
+    "1-D DP (value only)": 0.005795400007627904
+   },
+   {
+    "n": 200,
+    "W": 1000,
+    "Full DP table": 0.019156199996359646,
+    "1-D DP (value only)": 0.013001599989365786
+   },
+   {
+    "n": 200,
+    "W": 2000,
+    "Full DP table": 0.04132600000593811,
+    "1-D DP (value only)": 0.027081399981398135
+   }
+  ]
+ },
+ "dijkstra": [
+  {
+   "V": 10,
+   "E": 19,
+   "Dijkstra (one source)": 2.2799998987466097e-05
+  },
+  {
+   "V": 50,
+   "E": 109,
+   "Dijkstra (one source)": 8.349999552592635e-05
+  },
+  {
+   "V": 100,
+   "E": 215,
+   "Dijkstra (one source)": 0.00014980003470554948
+  },
+  {
+   "V": 250,
+   "E": 535,
+   "Dijkstra (one source)": 0.00035280000884085894
+  },
+  {
+   "V": 500,
+   "E": 1045,
+   "Dijkstra (one source)": 0.0006893000099807978
+  },
+  {
+   "V": 1000,
+   "E": 2099,
+   "Dijkstra (one source)": 0.0013694000081159174
+  },
+  {
+   "V": 2000,
+   "E": 4177,
+   "Dijkstra (one source)": 0.0028357999981381
+  }
+ ],
+ "tsp": {
+  "scaling": [
+   {
+    "stops": 5,
+    "Nearest Neighbour": 1.6899954061955214e-05
+   },
+   {
+    "stops": 10,
+    "Nearest Neighbour": 2.540001878514886e-05
+   },
+   {
+    "stops": 25,
+    "Nearest Neighbour": 6.330001633614302e-05
+   },
+   {
+    "stops": 50,
+    "Nearest Neighbour": 0.00019559997599571943
+   },
+   {
+    "stops": 100,
+    "Nearest Neighbour": 0.0006393999792635441
+   },
+   {
+    "stops": 200,
+    "Nearest Neighbour": 0.0024468000046908855
+   },
+   {
+    "stops": 400,
+    "Nearest Neighbour": 0.00992240000050515
+   }
+  ],
+  "quality": [
+   {
+    "stops": 3,
+    "trials": 20,
+    "Nearest Neighbour": 4.45000478066504e-06,
+    "Brute force (exact)": 9.049981599673629e-06,
+    "mean_ratio": 1.013140290041235,
+    "worst_ratio": 1.0957141953333505,
+    "optimal_found_pct": 60.0
+   },
+   {
+    "stops": 4,
+    "trials": 20,
+    "Nearest Neighbour": 5.799985956400633e-06,
+    "Brute force (exact)": 3.395002568140626e-05,
+    "mean_ratio": 1.053590970718843,
+    "worst_ratio": 1.1391839727744124,
+    "optimal_found_pct": 30.0
+   },
+   {
+    "stops": 5,
+    "trials": 20,
+    "Nearest Neighbour": 6.600050255656242e-06,
+    "Brute force (exact)": 0.00017324998043477535,
+    "mean_ratio": 1.0485079888134456,
+    "worst_ratio": 1.2705824638627357,
+    "optimal_found_pct": 40.0
+   },
+   {
+    "stops": 6,
+    "trials": 20,
+    "Nearest Neighbour": 8.800008799880743e-06,
+    "Brute force (exact)": 0.0010352000244893134,
+    "mean_ratio": 1.0557120743788522,
+    "worst_ratio": 1.1887246915411482,
+    "optimal_found_pct": 30.0
+   },
+   {
+    "stops": 7,
+    "trials": 20,
+    "Nearest Neighbour": 1.4999997802078724e-05,
+    "Brute force (exact)": 0.008168900007149205,
+    "mean_ratio": 1.0842937197721336,
+    "worst_ratio": 1.2040698788390491,
+    "optimal_found_pct": 15.0
+   },
+   {
+    "stops": 8,
+    "trials": 5,
+    "Nearest Neighbour": 2.1899992134422064e-05,
+    "Brute force (exact)": 0.07036650000372902,
+    "mean_ratio": 1.0269916086364346,
+    "worst_ratio": 1.0837595516589447,
+    "optimal_found_pct": 40.0
+   },
+   {
+    "stops": 9,
+    "trials": 5,
+    "Nearest Neighbour": 2.7399975806474686e-05,
+    "Brute force (exact)": 0.6656119999825023,
+    "mean_ratio": 1.0434155065686612,
+    "worst_ratio": 1.070706800489282,
+    "optimal_found_pct": 0.0
+   }
+  ]
+ },
+ "end_to_end": [
+  {
+   "dataset": "small",
+   "parcels": 10,
+   "locations": 8,
+   "roads": 17,
+   "capacity": 20,
+   "selected": 5,
+   "selected_weight": 18,
+   "stops": 3,
+   "route_km": 305.55,
+   "timings": {
+    "Sorting": 1.2499978765845299e-05,
+    "Reachability check": 1.6900012269616127e-05,
+    "Knapsack DP": 2.589996438473463e-05,
+    "Dijkstra": 4.810001701116562e-05,
+    "TSP (Nearest Neighbour)": 1.0499963536858559e-05,
+    "Total": 0.00011909997556358576
+   }
+  },
+  {
+   "dataset": "medium",
+   "parcels": 100,
+   "locations": 60,
+   "roads": 127,
+   "capacity": 100,
+   "selected": 27,
+   "selected_weight": 100,
+   "stops": 23,
+   "route_km": 610.46,
+   "timings": {
+    "Sorting": 0.00015889998758211732,
+    "Reachability check": 0.00010529998689889908,
+    "Knapsack DP": 0.0007995000341907144,
+    "Dijkstra": 0.0017994999652728438,
+    "TSP (Nearest Neighbour)": 7.579999510198832e-05,
+    "Total": 0.0031772000365890563
+   }
+  },
+  {
+   "dataset": "large",
+   "parcels": 1000,
+   "locations": 300,
+   "roads": 609,
+   "capacity": 500,
+   "selected": 194,
+   "selected_weight": 500,
+   "stops": 139,
+   "route_km": 1605.93,
+   "timings": {
+    "Sorting": 0.002021999971475452,
+    "Reachability check": 0.0006439000135287642,
+    "Knapsack DP": 0.043035199982114136,
+    "Dijkstra": 0.06056299997726455,
+    "TSP (Nearest Neighbour)": 0.0018066000193357468,
+    "Total": 0.10968729999149218
+   }
+  }
+ ]
+}

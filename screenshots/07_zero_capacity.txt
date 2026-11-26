@@ -1,0 +1,121 @@
+$ python main.py --capacity 0 --demo
+
+----- STEP 1-2  PARCELS -----
+  #  ID     Weight  Priority     Deadline  Value  Destination
+-------------------------------------------------------------
+  1  P01       4kg  1 Critical        4 h     70  Hospital
+  2  P02       6kg  2 High            6 h     58  Airport
+  3  P03       3kg  3 Medium          8 h     46  Library
+  4  P04       5kg  1 Critical        3 h     71  Mall
+  5  P05       8kg  4 Normal         24 h     20  TechPark
+  6  P06       2kg  2 High            5 h     59  School
+  7  P07       7kg  5 Low            48 h     10  Stadium
+  8  P08       3kg  3 Medium         12 h     42  Riverside
+  9  P09       5kg  2 High           10 h     54  Market
+ 10  P10       9kg  1 Critical        6 h     68  Station
+ 11  P11       2kg  4 Normal         30 h     20  Library
+ 12  P12       4kg  1 Critical        2 h     72  Hilltop
+-------------------------------------------------------------
+     Total: 12 parcels, 58 kg, value 590
+
+----- STEP 3  PRIORITISED ORDER (Merge Sort) -----
+  #  ID     Weight  Priority     Deadline  Value  Destination
+-------------------------------------------------------------
+  1  P12       4kg  1 Critical        2 h     72  Hilltop
+  2  P04       5kg  1 Critical        3 h     71  Mall
+  3  P01       4kg  1 Critical        4 h     70  Hospital
+  4  P06       2kg  2 High            5 h     59  School
+  5  P10       9kg  1 Critical        6 h     68  Station
+  6  P02       6kg  2 High            6 h     58  Airport
+  7  P03       3kg  3 Medium          8 h     46  Library
+  8  P09       5kg  2 High           10 h     54  Market
+  9  P08       3kg  3 Medium         12 h     42  Riverside
+ 10  P05       8kg  4 Normal         24 h     20  TechPark
+ 11  P11       2kg  4 Normal         30 h     20  Library
+ 12  P07       7kg  5 Low            48 h     10  Stadium
+-------------------------------------------------------------
+     Total: 12 parcels, 58 kg, value 590
+
+----- STEP 4  PACKING PLAN (0/1 Knapsack DP) -----
+Vehicle capacity: 0 kg
+Parcels considered (deliverable): 11
+
+DP table  dp[i][c] = best value using the first i parcels with capacity c:
+Item          c=0
+(none)          0
+P04 w5 v71      0
+P01 w4 v70      0
+P06 w2 v59      0
+P10 w9 v68      0
+P02 w6 v58      0
+P03 w3 v46      0
+P09 w5 v54      0
+P08 w3 v42      0
+P05 w8 v20      0
+P11 w2 v20      0
+P07 w7 v10      0
+
+SELECTED parcels (packing plan):
+  (no parcels)
+
+Maximum total value: 0
+Total selected weight: 0 kg of 0 kg (0.0% full)
+
+Left for the next trip:
+  #  ID     Weight  Priority     Deadline  Value  Destination
+-------------------------------------------------------------
+  1  P04       5kg  1 Critical        3 h     71  Mall
+  2  P01       4kg  1 Critical        4 h     70  Hospital
+  3  P06       2kg  2 High            5 h     59  School
+  4  P10       9kg  1 Critical        6 h     68  Station
+  5  P02       6kg  2 High            6 h     58  Airport
+  6  P03       3kg  3 Medium          8 h     46  Library
+  7  P09       5kg  2 High           10 h     54  Market
+  8  P08       3kg  3 Medium         12 h     42  Riverside
+  9  P05       8kg  4 Normal         24 h     20  TechPark
+ 10  P11       2kg  4 Normal         30 h     20  Library
+ 11  P07       7kg  5 Low            48 h     10  Stadium
+-------------------------------------------------------------
+     Total: 11 parcels, 54 kg, value 518
+
+UNDELIVERABLE (destination unknown or unreachable):
+  #  ID     Weight  Priority     Deadline  Value  Destination
+-------------------------------------------------------------
+  1  P12       4kg  1 Critical        2 h     72  Hilltop
+-------------------------------------------------------------
+     Total: 1 parcels, 4 kg, value 72
+
+----- STEP 5-7  SHORTEST PATHS (Dijkstra) -----
+Dijkstra shortest paths from the depot 'Depot' (exact, one source -> one target):
+  (no delivery stops selected)
+
+----- STEP 8-9  DELIVERY ROUTE (Nearest Neighbour TSP) -----
+Nearest Neighbour TSP route (APPROXIMATE - a good tour, not guaranteed optimal):
+  Visit order: Depot
+  TOTAL ROUTE DISTANCE: 0.0 km
+
+======================================================================
+COMPLETE COURIER PLAN SUMMARY
+======================================================================
+Parcels loaded from file   : 12
+Sorting algorithm          : Merge Sort
+Undeliverable parcels      : 1
+Vehicle capacity           : 0 kg
+Parcels selected (DP)      : 0  (0 kg, value 0)
+Parcels left for next trip : 11
+Delivery stops             : 0
+Route                      : Depot
+Total route distance       : 0.0 km
+
+Delivery schedule (ETA at 30 km/h average):
+
+Step timings (time.perf_counter):
+  Sorting                         0.031 ms
+  Reachability check              0.048 ms
+  Knapsack DP                     0.030 ms
+  Dijkstra                        0.024 ms
+  TSP (Nearest Neighbour)         0.009 ms
+  Total                           0.149 ms
+======================================================================
+
+Route map saved to screenshots\route_map.png
